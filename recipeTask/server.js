@@ -2,9 +2,12 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const connectDB = require('./Database/dbConfig'); // Adjust the path if needed
 const recipeRouter = require('./Routers/recipeRouter');
+const cors = require('cors');
 
 const app = express();
 app.use(bodyParser.json());
+
+app.use(cors());
 
 // Connect to the database
 connectDB();
