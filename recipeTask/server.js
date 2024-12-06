@@ -12,6 +12,11 @@ app.use(cors());
 // Connect to the database
 connectDB();
 
+// Root route
+app.get('/', (req, res) => {
+    res.send('Welcome to the Recipe API! Navigate to /api/recipes to interact with the API.');
+});
+
 // Routes
 app.use('/api/recipes', recipeRouter);
 
